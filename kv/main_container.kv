@@ -1,0 +1,393 @@
+#:import MeshLinePlot kivy_garden.graph.MeshLinePlot
+<Container>:
+
+    port_selector_id:port_selector
+    
+    graph : graph_test
+    
+    filepath:filepath
+    filelabel:filelabel
+    
+    variable_01_name:variable_01_name
+    variable_02_name:variable_02_name
+    variable_03_name:variable_03_name
+    variable_04_name:variable_04_name
+    variable_05_name:variable_05_name
+    variable_06_name:variable_06_name
+    variable_07_name:variable_07_name
+    variable_08_name:variable_08_name
+    variable_09_name:variable_09_name
+    variable_10_name:variable_10_name
+    variable_11_name:variable_11_name
+    variable_12_name:variable_12_name
+    variable_13_name:variable_13_name
+    variable_14_name:variable_14_name
+    variable_15_name:variable_15_name
+    variable_16_name:variable_16_name
+    variable_17_name:variable_17_name
+    variable_18_name:variable_18_name
+    variable_19_name:variable_19_name
+    variable_20_name:variable_20_name
+    
+    variable_01_status:variable_01_status
+    variable_02_status:variable_02_status
+    variable_03_status:variable_03_status
+    variable_04_status:variable_04_status
+    variable_05_status:variable_05_status
+    variable_06_status:variable_06_status
+    variable_07_status:variable_07_status
+    variable_08_status:variable_08_status
+    variable_09_status:variable_09_status
+    variable_10_status:variable_10_status
+    variable_11_status:variable_11_status
+    variable_12_status:variable_12_status
+    variable_13_status:variable_13_status
+    variable_14_status:variable_14_status
+    variable_15_status:variable_15_status
+    variable_16_status:variable_16_status
+    variable_17_status:variable_17_status
+    variable_18_status:variable_18_status
+    variable_19_status:variable_19_status
+    variable_20_status:variable_20_status
+    
+    variable_01_value:variable_01_value
+    variable_02_value:variable_02_value
+    variable_03_value:variable_03_value
+    variable_04_value:variable_04_value
+    variable_05_value:variable_05_value
+    variable_06_value:variable_06_value
+    variable_07_value:variable_07_value
+    variable_08_value:variable_08_value
+    variable_09_value:variable_09_value
+    variable_10_value:variable_10_value
+    variable_11_value:variable_11_value
+    variable_12_value:variable_12_value
+    variable_13_value:variable_13_value
+    variable_14_value:variable_14_value
+    variable_15_value:variable_15_value
+    variable_16_value:variable_16_value
+    variable_17_value:variable_17_value
+    variable_18_value:variable_18_value
+    variable_19_value:variable_19_value
+    variable_20_value:variable_20_value
+    
+    
+    rows:2
+    
+    Label:
+        text: "Insert Title here!"
+        size_hint_y:0.1
+    GridLayout:
+        cols:2
+        GridLayout:
+            size_hint_x:0.3
+            rows:3
+            Label:
+                id:fds
+                size_hint_y:0.03
+                text:"Set-up Arduino Port"
+            GridLayout:
+                size_hint_y:0.03
+                cols:3
+                Label:
+                    size_hint_x:0.25
+                    text: "Port:"
+                Spinner:
+                    id:port_selector
+                    values: root.f_serial_ports()
+                    text_autoupdate: True
+                Button:
+                    size_hint_x:0.25
+                    text:"(R)"
+                    on_press: root.f_serial_ports()
+                    on_release: port_selector.values = root.f_serial_ports()
+            GridLayout:
+                rows:2
+                rows_minimum:{0:10,1:500}
+                Label:
+                    text:"Set-up DAQ channels"
+                    size_hint_y:0.05
+
+                ScrollView:
+                    do_scroll_x: False
+                    do_scroll_y: True
+                    
+                    GridLayout:
+                        cols:4
+                        rows:20
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:01"
+                        TextInput:
+                            id: variable_01_name
+                            background_color:  (0.2,0.07,0.07,1)
+                            text: "Input Shits"
+                        Switch:
+                            id:variable_01_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_01_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:02"
+                        TextInput:
+                            id: variable_02_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_02_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_02_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:03"
+                        TextInput:
+                            id: variable_03_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_03_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_03_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:04"
+                        TextInput:
+                            id: variable_04_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_04_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_04_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:05"
+                        TextInput:
+                            id: variable_05_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_05_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_05_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:06"
+                        TextInput:
+                            id: variable_06_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_06_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_06_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:07"
+                        TextInput:
+                            id: variable_07_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_07_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_07_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:08"
+                        TextInput:
+                            id: variable_08_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_08_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_08_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:09"
+                        TextInput:
+                            id: variable_09_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_09_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_09_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:10"
+                        TextInput:
+                            id: variable_10_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_10_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_10_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:11"
+                        TextInput:
+                            id: variable_11_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_11_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_11_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:12"
+                        TextInput:
+                            id: variable_12_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_12_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_12_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:13"
+                        TextInput:
+                            id: variable_13_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_13_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_13_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:14"
+                        TextInput:
+                            id: variable_14_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_14_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_14_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:15"
+                        TextInput:
+                            id: variable_15_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_15_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_15_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:16"
+                        TextInput:
+                            id: variable_16_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_16_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_16_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:17"
+                        TextInput:
+                            id: variable_17_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_17_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_17_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:18"
+                        TextInput:
+                            id: variable_18_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_18_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_18_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:19"
+                        TextInput:
+                            id: variable_19_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_19_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_19_value
+                        Label:
+                            size_hint_x:0.25
+                            text:"CH:20"
+                        TextInput:
+                            id: variable_20_name
+                            background_color:  (0.2,0.07,0.07,1)
+                        Switch:
+                            id:variable_20_status
+                            size_hint_x:0.35
+                        Label:
+                            id:variable_20_value
+
+                    
+      
+                
+        GridLayout:
+            rows:3
+            GridLayout:
+                size_hint_y:0.05
+                cols:5
+                Label:
+                    text:"File Path"
+                    size_hint_x:0.2
+                TextInput:
+                    id:filepath
+                    text:"Add costum filepath"
+                    multiline:False
+                Label:
+                    text:"Filename"
+                    size_hint_x:0.2
+                TextInput:
+                    id:filelabel
+                    text: "Add costum filename label"
+                    size_hint_x:0.4
+                    multiline:False
+                Label:
+                    size_hint_x:0.05
+                    text:""
+            Graph:
+                id: graph_test
+                plot: MeshLinePlot
+                xlabel:'X'
+                ylabel:'Y'
+                x_ticks_minor:5
+                x_tics_major:25
+                y_ticks_major:100
+                y_grid_label:True
+                x_grid_label:True
+                padding:5
+                x_grid:True
+                y_grid:True
+                xmin:0
+                xmax:600
+                ymin:-1000
+                ymax:1000
+                size_hint_x:0.8
+            GridLayout:
+                size_hint_y:0.1
+                cols:2
+                Button:
+                    text:"Start"
+                    on_press: root.get_your_shit_together()
+                Button:
+                    text:"Stop & Save"
+                    on_press: root.stop_daq()
+        
