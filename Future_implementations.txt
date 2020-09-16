@@ -1,0 +1,24 @@
+Implementations to be done
+
+
+Essential:
+
+- Save data to .xls
+
+- Check Axis Range logic
+
+- When start is pressed:
+	if filename== "Add costum filename label":
+		Change it to a <unique_name>.xls
+	else:
+		keep text in filename as name for the file
+	
+	Same logic for filepath!
+
+- Sort-out color function for labels, background color is being change, foreground color also needs to be changed to assure readibility 
+	? same function that is implemented for background can be used for foreground ?
+
+Consider:
+
++ Add vizualization multiplier to variable ?
+
